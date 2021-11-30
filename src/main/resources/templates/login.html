@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type='text/css'>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #ee{
+            width: 600px;
+            margin: 30px auto;
+            /* background-color: red; */
+        }
+        #ff > fieldset{
+            width:400px;
+            padding: 20px;
+        }
+        #ff input{
+            height: 20px;
+            width: 96%;
+        }
+        #ff p {
+            margin-bottom: 10px;
+        }
+        #ff label{
+            margin-bottom:5px;
+        }
+        meter{
+            height: 20px;
+            width: 96%;
+        }
+    </style>
+</head>
+<body>
+    <div id="ee">
+        <form id="ff" action="/login" method="post" >
+            <fieldset>
+                <legend style="text-align: center;">登录页面</legend>
+                <p>
+                    <label>用户名: </label>
+                    <input type="text" name="username" placeholder="用户名" autofocus required>
+                </p>
+                <p>
+                    <label>密码: </label>
+                    <input type="password" name="password" placeholder="密码"  autofocus required>
+                </p>
+				<p>
+                    <input style="width: 60px;margin-left: 160px;" type="submit"  value="登录">
+                </p>
+            </fieldset>
+        </form>
+    </div>
+    <script type='text/javascript'>
+        var score = document.getElementById("score").oninput = function(){
+            document.getElementById("level").value = this.value;
+        }
+    </script>
+</body>
+</html>

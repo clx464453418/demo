@@ -1,0 +1,84 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script type="text/javascript">
+	function del(){
+	if(!confirm("确认要删除？")){
+	window.event.returnValue = false;
+	}
+	}
+</script>
+<style type="text/css">
+#customers
+  {
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  width:800px;
+  border-collapse:collapse;
+  }
+ 
+#customers td, #customers th 
+  {
+  font-size:1em;
+  border:2px solid deepskyblue;
+  padding:3px 7px 2px 7px;
+  }
+ 
+#customers th 
+  {
+  font-size:1.1em;
+  text-align:left;
+  padding-top:5px;
+  padding-bottom:4px;
+  background-color:lightblue;
+  color:black;
+  }
+ 
+#customers tr.alt td 
+  {
+  color:#000000;
+  background-color:#EAF2D3;
+  }
+</style>
+</head>
+ 
+<body>
+	
+<table id="customers"  style="margin: 0 auto;">
+	<thead><tr><th style="text-align: center;color: black;border-bottom: 1px solid skyblue;"  colspan="10">学生信息列表</th></tr></thead>
+ <tr>
+  <th >学号</th>
+  <th >学生姓名</th>
+  <th>性别</th>
+  <th>班级</th>
+  <th>手机号码</th>
+  <th>QQ</th>
+  <th>家庭地址</th>
+  <th>宿舍地址</th>
+  <th width="80px">修改</th>
+  <th width="80px">删除</th>
+ </tr>
+
+ <tr th:each="l:${list}">
+<th th:text="${l.getSid()}">学号</th>
+<th th:text="${l.getSname()}">学生姓名</th>
+<th th:text="${l.getSex()}">性别</th>
+<th th:text="${l.getClass1()}">班级</th>
+<th th:text="${l.getPhone()}">手机号码</th>
+<th th:text="${l.getQQ()}">QQ</th>
+<th th:text="${l.getAddress()}">家庭地址</th>
+<th th:text="${l.getDormitory()}">宿舍地址</th>
+<th><a th:href="@{/editStudentUI(sid=${l.getSid()})}"  >修改</a></th>
+<th><a th:href="@{/deleteStudent(sid=${l.getSid()})}" onclick="return del()">删除</a></th>
+</tr>
+ 
+
+
+ 
+
+
+ 
+</table>
+ <p style="font-size: 30px;margin-left: 430px;" ><a href="/addStudentUI">前往添加学生</a></p>
+<p style="font-size: 30px;margin-left: 430px;" ><a href="/successed_UI">返回首页</a></p>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type='text/css'>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #ee{
+            width: 600px;
+            margin: 30px auto;
+            /* background-color: red; */
+        }
+        #ff > fieldset{
+            width:400px;
+            padding: 20px;
+        }
+        #ff input{
+            height: 20px;
+            width: 96%;
+        }
+        #ff p {
+            margin-bottom: 10px;
+        }
+        #ff label{
+            margin-bottom:5px;
+        }
+        meter{
+            height: 20px;
+            width: 96%;
+        }
+    </style>
+</head>
+<body>
+    <div id="ee">
+        <form id="ff" method="post" action="/editStudent" autocomplete="on">
+            <fieldset>
+                <legend style="text-align: center;">修改学生信息</legend>
+                <p>
+                    <label>学生ID: </label>
+                    <input type="text" name="sid" readonly="readonly"  th:value="${student.getSid()}" autofocus required>
+                </p>
+                <p>
+                    <label>姓名: </label>
+                    <input type="text" name="sname" th:value="${student.getSname()}" placeholder="姓名" autofocus required>
+                </p>
+                <p>
+                    <label>性别: </label>
+                 <select name="sex" >
+                   <option value="男" selected>男</option>
+                   <option value="女">女</option>
+                 </select>
+
+                </p>
+				<p>
+				    <label>班级: </label>
+				    <input type="text" name="class1" th:value="${student.getClass1()}" placeholder="班级" autofocus required>
+				</p>
+				<p>
+				    <label>个人电话: </label>
+				    <input type="text" name="phone" th:value="${student.getPhone()}" placeholder="个人电话" autofocus required>
+				</p>
+				<p>
+				    <label>QQ: </label>
+				    <input type="text" name="QQ" th:value="${student.getQQ()}" placeholder="QQ" autofocus required>
+				</p>
+				<p>
+				    <label>家庭地址: </label>
+				    <input type="text" name="address" th:value="${student.getAddress()}" placeholder="请输入地址" autofocus required>
+				</p>
+				<p>
+				    <label>宿舍地址: </label>
+				    <input type="text" name="dormitory" th:value="${student.getAddress()}" placeholder="请输入地址" autofocus required>
+				</p>
+				<p>
+                    <input style="width: 60px;margin-left: 160px;" type="submit"  value="修改">
+                </p>
+            </fieldset>
+        </form>
+    </div>
+	<div style="font-size: 20px; margin-left: 500px;"><a href="successed.html">返回管理员页面</a></div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type='text/css'>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #ee{
+            width: 600px;
+            margin: 30px auto;
+            /* background-color: red; */
+        }
+        #ff > fieldset{
+            width:400px;
+            padding: 20px;
+        }
+        #ff input{
+            height: 20px;
+            width: 96%;
+        }
+        #ff p {
+            margin-bottom: 10px;
+        }
+        #ff label{
+            margin-bottom:5px;
+        }
+        meter{
+            height: 20px;
+            width: 96%;
+        }
+    </style>
+</head>
+<body>
+    <div id="ee">
+        <form id="ff" action="successed.html" autocomplete="on">
+            <fieldset>
+                <legend style="text-align: center;">添加课程</legend>
+                <p>
+                    <label>课程名 </label>
+                    <input type="text" name="cname" placeholder="请输入课程名" autofocus required>
+                </p>
+				<p>
+				    <label>学分 </label>
+				    <input type="text" name="credit" placeholder="请输入学分" autofocus required>
+				</p>
+				<p>
+				    <input style="width: 60px;margin-left: 160px;" type="submit"  value="添加">
+				</p>
+               
+            </fieldset>
+        </form>
+    </div>
+	
+    <script type='text/javascript'>
+        var score = document.getElementById("score").oninput = function(){
+            document.getElementById("level").value = this.value;
+        }
+    </script>
+</body>
+</html>
